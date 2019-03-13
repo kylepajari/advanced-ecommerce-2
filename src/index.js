@@ -6,12 +6,19 @@ import state from "./state";
 
 let currentCategory = "tires";
 
-export function changeCategory(category) {
+const changeCategory = category => {
   currentCategory = category;
   render();
-}
+};
 
 function render() {
-  ReactDOM.render(<App state={state} />, document.getElementById("root"));
+  ReactDOM.render(
+    <App
+      state={state}
+      currentCategory={currentCategory}
+      changeCategory={changeCategory}
+    />,
+    document.getElementById("root")
+  );
 }
 render();

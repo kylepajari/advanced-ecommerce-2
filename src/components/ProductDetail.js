@@ -6,6 +6,8 @@ function ProductDetail(props) {
       <img src={props.Src} alt="image" />
       <h3>{props.Title}</h3>
       <p>{props.Details}</p>
+      <p>Rating: {props.Rating}</p>
+      <p>Reviews: {props.Reviews}</p>
       <h4>{props.Price}</h4>
       <div className="button">
         <span>
