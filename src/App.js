@@ -7,13 +7,13 @@ import TopNav from "./components/TopNav";
 import ProductDetail from "./components/ProductDetail";
 import ImageSlider from "./components/ImageSlider";
 import state from "./state";
+import PropTypes from "prop-types";
 
 function App(props) {
-  let productsArr = state.products.filter(product => {
+  const productsArr = state.products.filter(product => {
     let match = null;
     if (product.category === props.currentCategory) {
       match = product;
-      console.log(match);
     }
     return match;
   });
@@ -35,12 +35,12 @@ function App(props) {
                 {productsArr.map((product, i) => {
                   return (
                     <ProductDetail
-                      Title={product.name}
-                      Src={product.imgUrl}
-                      Details={product.description}
-                      Price={product.price}
-                      Rating={product.rating}
-                      Reviews={product.reviews}
+                      name={product.name}
+                      imgUrl={product.imgUrl}
+                      description={product.description}
+                      price={product.price}
+                      rating={product.rating}
+                      reviews={product.reviews}
                       key={i}
                     />
                   );
@@ -55,5 +55,9 @@ function App(props) {
     </div>
   );
 }
+
+App.propTypes = {
+  changeCategory: PropTypes.func
+};
 
 export default App;

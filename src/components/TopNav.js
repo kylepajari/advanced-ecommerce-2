@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function TopNav(props) {
   return (
@@ -67,5 +68,9 @@ function TopNav(props) {
     </div>
   );
 }
+
+TopNav.propTypes = {
+  changeCategory: PropTypes.func
+};
 
 export default TopNav;
